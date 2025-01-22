@@ -1,0 +1,192 @@
+.asset-detail-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+  }
+  
+  .asset-hero {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(30, 41, 59, 0.97) 100%),
+                url('https://images.unsplash.com/photo-1642790551116-18e150f248e5?auto=format&fit=crop&w=1920&q=80') center/cover;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .asset-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+  }
+  
+  .asset-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .asset-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  
+  .asset-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+  
+  .asset-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  
+  .asset-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .asset-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    backdrop-filter: blur(12px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .asset-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #94a3b8;
+  }
+  
+  .card-icon {
+    color: #60a5fa;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .current-price {
+    margin-bottom: 2rem;
+  }
+  
+  .price-content {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  
+  .price-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    letter-spacing: -0.02em;
+  }
+  
+  .price-change {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .price-change.positive {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+  }
+  
+  .price-change.negative {
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+  }
+  
+  .asset-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e2e8f0;
+  }
+  
+  .error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 2rem;
+  }
+  
+  .error-content {
+    text-align: center;
+    color: #e2e8f0;
+  }
+  
+  .error-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .error-content p {
+    color: #94a3b8;
+    font-size: 1.125rem;
+  }
+  
+  @media (max-width: 768px) {
+    .asset-hero-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .asset-subtitle {
+      font-size: 1.125rem;
+    }
+  
+    .asset-container {
+      padding: 2rem 1rem;
+    }
+  
+    .price-value {
+      font-size: 2.5rem;
+    }
+  
+    .metric-value {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .asset-hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .asset-metrics-grid {
+      grid-template-columns: 1fr;
+    }
+  }

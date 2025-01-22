@@ -1,0 +1,335 @@
+.news-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+}
+
+.news-hero {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(30, 41, 59, 0.97) 100%),
+                url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1920&q=80') center/cover;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+}
+
+.news-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-icon {
+    color: #60a5fa;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.3));
+}
+
+.news-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+}
+
+.news-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+    border-radius: 3px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.section-description {
+    color: #94a3b8;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Market Grid */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.market-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.market-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.market-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.market-card:hover::before {
+    opacity: 1;
+}
+
+.market-card-content {
+    padding: 2rem;
+}
+
+.market-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.market-card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.trend-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.trend-icon.positive {
+    color: #34d399;
+    filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.2));
+}
+
+.trend-icon.negative {
+    color: #f87171;
+    filter: drop-shadow(0 0 8px rgba(248, 113, 113, 0.2));
+}
+
+.market-card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.price {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #e2e8f0;
+}
+
+.change {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.change.positive {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+}
+
+.change.negative {
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+}
+
+/* News Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+}
+
+.news-card-content {
+    padding: 2rem;
+}
+
+.news-category {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.news-headline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.news-summary {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.news-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+.read-more {
+    background: none;
+    border: none;
+    color: #60a5fa;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    color: #93c5fd;
+}
+
+.read-more .arrow {
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover .arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+    .news-container {
+        padding: 3rem 1.5rem;
+    }
+    
+    .news-hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .news-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-headline {
+        font-size: 1.25rem;
+    }
+}
