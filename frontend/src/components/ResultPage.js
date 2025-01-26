@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { 
   BarChart3, 
   PieChart,
-  TrendingUp,
   DollarSign,
   AlertCircle,
   ArrowUpRight,
