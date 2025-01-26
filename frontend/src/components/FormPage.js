@@ -15,7 +15,7 @@ function FormPage() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/submit_allocation', {
+      const response = await fetch('https://wealthrock.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
