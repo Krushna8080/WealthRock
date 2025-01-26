@@ -18,7 +18,7 @@ CORS(app)
 # Define global variables
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath('./data/nifty.csv')))
 data_dir = os.path.join(base_dir, 'data')
-default_path = r'C:\Users\91808\OneDrive\Desktop\FINALLLL\data\nifty.csv'
+default_path = r'C:\Users\91808\OneDrive\Desktop\DynamicInvestmentAllocation\data\nifty.csv'
 
 # Investment Allocation Functions
 def get_allocation(capital, time_horizon, risk_tolerance):
@@ -250,7 +250,23 @@ def submit_allocation():
         })
     except (ValueError, TypeError) as e:
         return jsonify({"error": str(e)}), 400
+    
+from flask import Flask, send_from_directory
+import os
 
+app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
+
+# Serve React's index.html for the root route
+@app.route('/')
+def serve_react_app():
+    return send_from_directory(app.static_folder, 'index.html')
+
+# Serve static files (e.g., CSS, JS)
+@app.route('/<path:path>')
+def serve_static_files(path):
+    if os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
